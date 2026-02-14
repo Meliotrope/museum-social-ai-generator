@@ -143,9 +143,8 @@ MIT License - Libero di usare e modificare per il tuo museo.
 
 ## Crediti
 
-Progetto di ricerca sviluppato da Maria Linda Pessolano nell'ambito della tesi di Master di II livello in "Management, Promozione, Innovazioni Tecnologiche nella Gestione dei Beni Culturali" - Università Roma Tre, 2026. 
+Progetto di ricerca sviluppato da Maria Linda Pessolano (relatrice Isabella Ducros) nell'ambito della tesi di Master di II livello in "Management, Promozione, Innovazioni Tecnologiche nella Gestione dei Beni Culturali" - Università Roma Tre, 2026. 
 
-Relatrice: dottoressa Isabella Ducros.
 
 **Strumenti utilizzati:**
 - [n8n](https://n8n.io) - Workflow automation
