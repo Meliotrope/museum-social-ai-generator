@@ -12,7 +12,7 @@ Questo workflow automatizza la generazione di post per Instagram e Facebook part
 2. L'intelligenza artificiale Claude genera copy ottimizzati per Instagram e Facebook in italiano
 3. Scrive i risultati nel foglio e aggiorna lo Stato a "processato"
 
-![Workflow n8n](screenshot-workflow.png)
+![Workflow n8n](Screenshot-workflow.png)
 
 ---
 
