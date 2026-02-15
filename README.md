@@ -1,6 +1,6 @@
 ## Workflow n8n per automatizzare la creazione di contenuti social (Instagram e Facebook) per musei italiani usando l'intelligenza artificiale Claude.
 
-> Progetto sviluppato per la tesi di Master "Valutazione e sviluppo di soluzioni automatizzate con strumenti open source per la comunicazione digitale dei musei" - Università Roma Tre, 2025
+> Progetto sviluppato per la tesi di Master "Valutazione e sviluppo di soluzioni automatizzate con strumenti open source per la comunicazione digitale dei musei" - Università Roma Tre, 2026
 
 ---
 
