@@ -1,6 +1,6 @@
-## Workflow n8n per automatizzare la creazione di contenuti social (Instagram e Facebook) per musei italiani usando l'intelligenza artificiale Claude.
+# Workflow n8n per automatizzare la creazione di contenuti social (Instagram e Facebook) per musei italiani usando l'intelligenza artificiale Claude
 
-> Progetto sviluppato per la tesi di Master "Valutazione e sviluppo di soluzioni automatizzate con strumenti open source per la comunicazione digitale dei musei" - Università Roma Tre, 2026
+> Progetto sviluppato per la tesi di Master "Agenti AI per la comunicazione museale: un framework metodologico e un prototipo open source per l'automazione di contenuti digitali" - Università Roma Tre, 2026
 
 ---
 
@@ -21,13 +21,14 @@ Questo workflow automatizza la generazione di post per Instagram e Facebook part
 Il workflow usa un calendario editoriale su Google Sheets con queste colonne:
 
 **Input (da compilare manualmente):**
+
 - Argomento
 - Data pubblicazione
 - Note (indicazioni specifiche per l'AI)
 - Target (pubblico di riferimento)
 - Stato (da processare / processato)
-- Instagram 
-- Facebook 
+- Instagram
+- Facebook
 
 **[Apri template Google Sheets →](https://docs.google.com/spreadsheets/d/1XRs-JYPtmoKoP4x25H2JolWpkYrZ7-fhm8ra5SmBkN8/edit?gid=0#gid=0)**
 
@@ -38,8 +39,9 @@ Il workflow usa un calendario editoriale su Google Sheets con queste colonne:
 ## Requisiti
 
 **Account e configurazione:**
+
 - Account **n8n** ([cloud gratuito 14 giorni](https://n8n.io/cloud) o [self-hosted](https://docs.n8n.io/hosting/))
-- Account **Google Cloud Console** 
+- Account **Google Cloud Console**
 - Account **Anthropic** con API key
 
 ---
@@ -88,33 +90,41 @@ Per istruzioni dettagliate: [istruzioni.md](istruzioni.md)
 
 Per istruzioni passo-passo complete, leggi **[istruzioni.md](istruzioni.md)**.
 
+---
+
 ## Costi
 
 **Claude:**
-- Con Haiku 3.0: ~$0.001 per contenuto (2 post)
-- Con Sonnet 4.5: ~$0.003 per contenuto (2 post)
+
+- Con Claude Haiku 3: ~$0.001 per contenuto (2 post)
+- Con Claude Sonnet 4.5: ~$0.003 per contenuto (2 post)
 
 **n8n:**
+
 - Cloud: 14 giorni gratis, poi da €20/mese
 - Self-hosted: gratuito (serve un server)
 
 **Google Sheets API:**
+
 - Gratuita entro limiti generosi (60 richieste al minuto per utente)
 
 ---
 
-
 ## Personalizzazioni
 
 **Cambiare modello AI:**
+
 - Apri il nodo "Anthropic Chat Model"
 - In "Model" scegli "Claude Sonnet 4.5" per qualità superiore
 
 **Modificare tone of voice:**
+
 - Apri il nodo "AI Agent"
 - Modifica la sezione "General tone" del prompt
+- Il testo integrale del prompt è riportato in **[prompt.md](prompt.md)**
 
 **Aggiungere altre piattaforme:**
+
 - Vedi istruzioni dettagliate in [istruzioni.md](istruzioni.md)
 
 ---
@@ -127,9 +137,9 @@ Per istruzioni passo-passo complete, leggi **[istruzioni.md](istruzioni.md)**.
 
 ---
 
-## 📞 Supporto
+## Supporto
 
-- **Issue GitHub**: [Apri una issue](../../issues) per domande o problemi
+- **Issue GitHub**: [Apri una issue](https://github.com/Meliotrope/museum-social-ai-generator/issues) per domande o problemi
 - **Documentazione n8n**: [docs.n8n.io](https://docs.n8n.io)
 - **API Anthropic**: [docs.anthropic.com](https://docs.anthropic.com)
 
@@ -143,14 +153,13 @@ MIT License - Libero di usare e modificare per il tuo museo.
 
 ## Crediti
 
-Progetto di ricerca sviluppato da Maria Linda Pessolano (relatrice Isabella Ducros) nell'ambito della tesi di Master di II livello in "Management, Promozione, Innovazioni Tecnologiche nella Gestione dei Beni Culturali" - Università Roma Tre, 2026. 
-
+Progetto di ricerca sviluppato da Maria Linda Pessolano (relatrice Isabella Ducros) nell'ambito della tesi di Master di II livello in "Management, promozione, innovazioni tecnologiche nella gestione dei beni culturali" - Università Roma Tre, 2026.
 
 **Strumenti utilizzati:**
+
 - [n8n](https://n8n.io) - Workflow automation
-- [Claude AI](https://www.anthropic.com) - Anthropic (modelli Sonnet 4.5 / Haiku 3.0)
+- [Claude AI](https://www.anthropic.com) - Anthropic (modelli Claude Sonnet 4.5 / Claude Haiku 3)
 
 ---
 
 **Se questo progetto ti è utile, lascia una stella su GitHub!**
-```
