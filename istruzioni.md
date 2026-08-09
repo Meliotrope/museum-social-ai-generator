@@ -7,6 +7,7 @@
 Questo workflow si attiva automaticamente ogni giorno alle 8:00 del mattino.
 
 ## Per modificare quando si attiva:
+
 1. Clicca sul nodo "Schedule Trigger"
 2. Nel pannello Parameters:
    - In "Trigger Interval" scegli la frequenza (Days, Hours, Minutes, ecc.)
@@ -15,6 +16,7 @@ Questo workflow si attiva automaticamente ogni giorno alle 8:00 del mattino.
 3. Salva
 
 ## Per impostare l'attivazione manuale:
+
 1. Clicca col tasto destro su "Schedule Trigger"
 2. Scegli "Delete"
 3. Clicca sul + in alto a destra
@@ -26,6 +28,7 @@ Questo workflow si attiva automaticamente ogni giorno alle 8:00 del mattino.
 Questo nodo legge le righe dal tuo piano editoriale Google Sheets che hanno Stato = "da processare".
 
 ## Configurazione credenziali Google:
+
 1. Clicca sul nodo "Google Sheets - Leggi"
 2. Nel pannello Parameters, clicca su "Credential to connect with"
 3. Scegli "Create New Credential"
@@ -33,11 +36,13 @@ Questo nodo legge le righe dal tuo piano editoriale Google Sheets che hanno Stat
 5. Autorizza n8n ad accedere ai tuoi fogli Google
 
 ## Configurazione foglio:
+
 1. In "Document" inserisci l'URL completo del tuo Google Sheets
 2. In "Sheet" seleziona da "List" il foglio
 3. Salva
 
 ## Configurazione filtro:
+
 1. Scorri verso il basso fino a "Filters"
 2. Clicca su "Add Filter"
 3. In "Column" scrivi: **Stato**
@@ -49,23 +54,30 @@ Questo nodo legge le righe dal tuo piano editoriale Google Sheets che hanno Stat
 
 Questo nodo genera i copy per Instagram e Facebook usando l'LLM Claude.
 
+Il testo integrale delle istruzioni fornite al modello è riportato in **[prompt.md](prompt.md)**.
+
 ## Configurazione credenziali Anthropic:
+
 1. Clicca sul nodo "Anthropic Chat Model"
 2. In "Credential to connect with" scegli "Create New Credential"
 3. Incolla la tua API key Anthropic
 4. Salva
 
 ## Scelta modello AI:
+
 1. Clicca sul nodo "Anthropic Chat Model"
-2. In "Model" scegli quale versione di Claude usare: **per test e uso economico** lascia **Claude Haiku 4.5** (già impostato), **per qualità superiore** scegli **Claude Sonnet 4.5**
+2. In "Model" scegli quale versione di Claude usare: **per test e uso economico** lascia **Claude Haiku 3** (già impostato), **per qualità superiore** scegli **Claude Sonnet 4.5**
 
 ## Per aggiungere altri social:
+
 Se non hai esperienze di prompt engineering, **chiedi supporto a un AI (Claude, ChatGPT...)** seguendo questi passaggi:
+
 1. Clicca sul nodo "AI Agent"
-2. Copia il testo che trovi in "prompt - user message"
+2. Copia il testo che trovi in "prompt - user message" (lo trovi anche in **[prompt.md](prompt.md)**)
 3. Forniscilo a Claude o ChatGPT e chiedi: *"Aggiungi istruzioni per LinkedIn (esempio) mantenendo la struttura esistente"*
 4. Aggiorna il prompt nel nodo "AI Agent" con la nuova versione
 5. Vai sul nodo **"Structured Output Parser"** e aggiungi la nuova chiave nello schema JSON:
+
 ```
 {
   "instagram": "",
@@ -73,10 +85,12 @@ Se non hai esperienze di prompt engineering, **chiedi supporto a un AI (Claude, 
   "linkedin": ""
 }
 ```
+
 6. Vai sul nodo **"Google Sheets - Aggiorna"** e aggiungi la colonna LinkedIn nei mapping
 7. Ricorda di aggiungere la colonna "LinkedIn" anche nel tuo Google Sheets.
 
 ## Lingua del prompt e dell'output:
+
 Il prompt è scritto in **inglese** per ridurre i costi di circa il 15-25% (i modelli AI processano l'inglese in modo più efficiente).
 
 **L'output sarà comunque in italiano** perché il prompt contiene l'istruzione esplicita di generare testi in italiano.
@@ -88,27 +102,33 @@ Se preferisci, puoi **tradurre il prompt in italiano** o **cambiare la lingua in
 Questo nodo scrive i copy generati dall'AI nel tuo Google Sheets e aggiorna lo Stato a "processato".
 
 ## Configurazione credenziali e foglio:
+
 1. Segui le istruzioni per le credenziali di "Google Sheets - Leggi"
 2. In "Document" inserisci lo stesso **URL** del Google Sheet
 3. In "Sheet" seleziona lo stesso **foglio**
 4. In "Column to Match On" scegli **row_number**
 
 ## Configurazione colonne:
+
 Scorri fino alla sezione "Values to update":
 
 **Per row_number:**
+
 1. Clicca sull'icona "Expression" (fx) accanto al campo
 2. Cancella lo 0
 3. Scrivi: `{{ $json.row_number }}`
 
 **Per Stato:**
+
 1. Lascia modalità "Fixed"
 2. Scrivi: `processato`
 
 **Per Instagram:**
+
 1. Clicca sull'icona "Expression" (fx)
 2. Scrivi: `{{ $json.output.instagram }}`
 
 **Per Facebook:**
+
 1. Clicca sull'icona "Expression" (fx)
 2. Scrivi: `{{ $json.output.facebook }}`
